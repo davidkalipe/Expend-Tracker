@@ -28,8 +28,9 @@ class _ExpensesState extends State<Expenses> {
   ];
 
   _openAddExpenseOverlay(){
-    showModalBottomSheet(context: context, builder: (ctx) =>
-    const NewExpense());
+    showModalBottomSheet(
+        context: context,
+        builder: (ctx) => const NewExpense());
   }
 
   @override

@@ -1,6 +1,7 @@
 import 'package:expense_tracker/widget/expenses_list.dart';
 import 'package:expense_tracker/widget/new_expense.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../models/expense.dart';
 
@@ -27,29 +28,39 @@ class _ExpensesState extends State<Expenses> {
     )
   ];
 
-  _openAddExpenseOverlay(){
+  _openAddExpenseOverlay() {
     showModalBottomSheet(
-        context: context,
-        builder: (ctx) => const NewExpense());
+        context: context, builder: (ctx) => const NewExpense());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Flutter ExpenseTracker"),
+        title: Text(
+          "Flutter ExpenseTracker",
+          style: GoogleFonts.lato(fontWeight: FontWeight.bold),
+        ),
         actions: [
           IconButton(
             onPressed: _openAddExpenseOverlay,
-            icon: const Icon(Icons.add),)
+            icon: const Icon(Icons.add),
+          )
         ],
       ),
       body: Column(
         children: [
           //Toolbar with the Add button => Row
-          const Text('The chart'),
+          Container(
+            padding: const EdgeInsets.only(bottom: 15, top: 10),
+            child: Text(
+              'The chart',
+              style:
+                  GoogleFonts.lato(fontWeight: FontWeight.normal, fontSize: 16),
+            ),
+          ),
           Expanded(
-              child: ExpensesList(expenses: _registeredExpenses),
+            child: ExpensesList(expenses: _registeredExpenses),
           )
         ],
       ),

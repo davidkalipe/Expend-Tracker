@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
 import 'package:expense_tracker/models/expense.dart';
 
@@ -24,9 +25,19 @@ class _NewExpenseState extends State<NewExpense> {
         initialDate: now,
         firstDate: firstDate,
         lastDate: now);
+
     setState(() {
       _selectedDate = pickedDate;
     });
+  }
+
+  void _submitExpenseData(){
+    final enteredAmount = double.tryParse(_amountController.text);
+    final amountIsInvalid = enteredAmount == null || enteredAmount <= 0;
+    if(_titleController.text.trim().isEmpty){
+      //show error message
+
+    }
   }
 
   @override
@@ -79,6 +90,7 @@ class _NewExpenseState extends State<NewExpense> {
               )
             ],
           ),
+          const Gap(16),
           Row(
             children: [
               DropdownButton(
@@ -110,10 +122,7 @@ class _NewExpenseState extends State<NewExpense> {
                 child: const Text("Cancel"),
               ),
               ElevatedButton(
-                  onPressed: () {
-                    print(_titleController.text);
-                    print(_amountController.text);
-                  },
+                  onPressed: _submitExpenseData,
                   child: const Text("Save Expense"))
             ],
           )

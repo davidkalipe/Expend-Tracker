@@ -77,7 +77,7 @@ class _ExpensesState extends State<Expenses> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Flutter ExpenseTracker",
+          "ExpenseTracker",
           style: GoogleFonts.lato(fontWeight: FontWeight.bold),
         ),
         actions: [
@@ -93,7 +93,7 @@ class _ExpensesState extends State<Expenses> {
           Container(
             padding: const EdgeInsets.only(bottom: 15, top: 10),
             child: Text(
-              ' My expenses',
+              'My expenses',
               style:
                   GoogleFonts.lato(fontWeight: FontWeight.bold, fontSize: 19),
             ),

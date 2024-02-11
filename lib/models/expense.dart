@@ -10,7 +10,7 @@ enum Category { food, travel, leisure, work }
 
 const categoryIcons = {
   Category.food: Icons.lunch_dining,
-  Category.travel: Icons.flight_rounded,
+  Category.travel: Icons.flight_takeoff,
   Category.leisure: Icons.movie,
   Category.work: Icons.work
 };
@@ -18,11 +18,10 @@ const categoryIcons = {
 class Expense {
   Expense(
       {required this.title,
-        required this.amount,
-        required this.date,
-        required this.category})
+      required this.amount,
+      required this.date,
+      required this.category})
       : id = uuid.v4();
-
 
   final String id;
   final String title;
@@ -30,8 +29,7 @@ class Expense {
   final DateTime date;
   final Category category;
 
-  String get formatedDate{
+  String get formatedDate {
     return formatter.format(date);
   }
-
 }

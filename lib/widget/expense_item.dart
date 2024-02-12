@@ -19,6 +19,7 @@ class ExpenseItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 expense.title,
@@ -29,7 +30,7 @@ class ExpenseItem extends StatelessWidget {
                 children: [
                   Text(
                     '\$${expense.amount.toStringAsFixed(2)}',
-                    style: GoogleFonts.lato(fontWeight: FontWeight.w500),
+                    style: GoogleFonts.lato(fontWeight: FontWeight.w400),
                   ),
                   const Spacer(),
                   Row(

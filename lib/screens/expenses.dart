@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../models/expense.dart';
+import '../widget/chart/chart.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -92,11 +93,7 @@ class _ExpensesState extends State<Expenses> {
           //Toolbar with the Add button => Row
           Container(
             padding: const EdgeInsets.only(bottom: 15, top: 10),
-            child: Text(
-              'My expenses',
-              style:
-                  GoogleFonts.lato(fontWeight: FontWeight.bold, fontSize: 19),
-            ),
+            child: Chart(expenses: _registeredExpenses),
           ),
           Expanded(child: mainContent)
         ],
